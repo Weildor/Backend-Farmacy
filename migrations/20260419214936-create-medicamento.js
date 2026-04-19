@@ -24,6 +24,13 @@ module.exports = {
       fecha_caducidad: {
         type: Sequelize.DATE
       },
+      id_categoria: {
+        type: Sequelize.INTEGER,
+        references:{
+          model : 'categoria',
+          key: 'id'
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

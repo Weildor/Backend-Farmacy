@@ -9,6 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      id_venta: {
+        type: Sequelize.INTEGER,
+        references:{
+          model : 'ventas',
+          key: 'id'
+        },
+      },
+      id_medicamento: {
+        type: Sequelize.INTEGER,
+        references:{
+          model : 'medicamento',
+          key: 'id'
+        },
+      },
       cantidad: {
         type: Sequelize.INTEGER
       },
