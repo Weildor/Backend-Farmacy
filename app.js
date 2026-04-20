@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 //Configurar las rutas de bienvenida al servidor
 app.get('/', (req, res)=>res.status(200).send({
-    message: 'Biemnvenida a la API REST de compras.',
+    message: 'Biemnvenida a la API de Nuestra Farmacia.',
 }))
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
