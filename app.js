@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended:false }));
 app.get('/', (req, res)=>res.status(200).send({
     message: 'Biemnvenida a la API de Nuestra Farmacia.',
 }))
+// Importar y configurar las rutas de categoría
+require('./routes/route_categoria')(app);
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
 const server = http.createServer(app);
