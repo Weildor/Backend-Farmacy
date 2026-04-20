@@ -22,6 +22,7 @@ require('./routes/route_rol')(app);
 require('./routes/route_usuarios')(app);
 require('./routes/route_ventas')(app);
 require('./routes/route_medicamento')(app);
+require('./routes/route_detalle_venta')(app);
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
 const server = http.createServer(app);
