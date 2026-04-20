@@ -18,6 +18,7 @@ app.get('/', (req, res)=>res.status(200).send({
 }))
 // Importar y configurar las rutas de categoría
 require('./routes/route_categoria')(app);
+require('./routes/route_rol')(app);
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
 const server = http.createServer(app);
