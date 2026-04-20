@@ -10,8 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+  // El medicamento pertenece a una categoría
+  this.belongsTo(models.categoria, { 
+    foreignKey: 'id_categoria', 
+    as: 'categoria' 
+  });
+}
   }
   medicamento.init({
     nombre: DataTypes.STRING,

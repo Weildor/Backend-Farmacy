@@ -13,14 +13,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         references:{
           model : 'ventas',
-          key: 'id'
+          key: 'id',
+          onUpdate: 'CASCADE', 
+          onDelete: 'CASCADE'
         },
       },
       id_medicamento: {
         type: Sequelize.INTEGER,
         references:{
-          model : 'medicamento',
-          key: 'id'
+          model : 'medicamentos',
+          key: 'id',
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         },
       },
       cantidad: {

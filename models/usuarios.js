@@ -10,14 +10,36 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+  // Un usuario pertenece a un Rol (Relación 1:N)
+  this.belongsTo(models.rol, { 
+    foreignKey: 'id_rol', 
+    as: 'rol' 
+  });
+
+  // Un usuario puede tener muchas Ventas (Relación 1:N)
+  this.hasMany(models.ventas, { 
+    foreignKey: 'id_usuario', 
+    as: 'ventas' 
+  });
+}
   }
   usuarios.init({
-    nombre: DataTypes.STRING,
-    apellido: DataTypes.STRING,
-    correo: DataTypes.STRING,
-    password: DataTypes.STRING
+    nombre: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    apellido: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    correo: {
+      type: DataTypes.STRING(120),
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING(225),
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'usuarios',
